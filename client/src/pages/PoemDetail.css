@@ -1,0 +1,215 @@
+.poem-detail {
+  min-height: 100vh;
+  padding: 9rem 2rem 6rem;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.poem-detail--404 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  font-family: var(--font-deva);
+  color: var(--ink-muted);
+}
+
+.poem-detail__back {
+  margin-bottom: 3rem;
+}
+
+.poem-detail__back a {
+  font-family: var(--font-deva);
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+
+.poem-detail__back a:hover {
+  color: var(--gold);
+}
+
+.poem-detail__article {
+  animation: fadeUp 0.6s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.poem-detail__header {
+  margin-bottom: 2rem;
+}
+
+.poem-detail__meta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.poem-detail__num {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--ink-faint);
+}
+
+.poem-detail__year {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--ink-faint);
+}
+
+.poem-detail__title {
+  font-family: var(--font-deva);
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 400;
+  color: var(--gold);
+  letter-spacing: 0.02em;
+  line-height: 1.25;
+  margin-bottom: 1.2rem;
+}
+
+.poem-detail__tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.poem-detail__tag {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--border);
+}
+
+.poem-detail__divider {
+  width: 40px;
+  height: 1px;
+  background: var(--gold-dim);
+  margin-bottom: 3rem;
+  opacity: 0.4;
+}
+
+.poem-detail__body {
+  margin-bottom: 3rem;
+}
+
+.poem-detail__line {
+  font-family: var(--font-deva);
+  font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 2.2;
+  letter-spacing: 0.02em;
+}
+
+.poem-detail__stanza-break {
+  height: 1.5rem;
+}
+
+.poem-detail__signature {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--ink-faint);
+  margin-top: 2rem;
+  letter-spacing: 0.04em;
+}
+
+.poem-detail__dash {
+  font-style: normal;
+  color: var(--gold-dim);
+}
+
+/* Navigation */
+.poem-detail__nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.poem-detail__nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem;
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.poem-detail__nav-btn:hover {
+  border-color: var(--border-hover);
+  background: var(--gold-faint);
+}
+
+.poem-detail__nav-btn--next {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.poem-detail__nav-btn span > span {
+  display: block;
+}
+
+.poem-detail__nav-label {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.15em;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.poem-detail__nav-title {
+  font-family: var(--font-deva);
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+  transition: color 0.2s;
+}
+
+.poem-detail__nav-btn:hover .poem-detail__nav-title {
+  color: var(--gold);
+}
+
+.poem-detail__nav-arrow {
+  color: var(--ink-faint);
+  font-size: 1.1rem;
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+.poem-detail__nav-btn--prev:hover .poem-detail__nav-arrow {
+  transform: translateX(-4px);
+  color: var(--gold);
+}
+
+.poem-detail__nav-btn--next:hover .poem-detail__nav-arrow {
+  transform: translateX(4px);
+  color: var(--gold);
+}
+
+@media (max-width: 600px) {
+  .poem-detail__nav {
+    grid-template-columns: 1fr;
+  }
+  .poem-detail__nav-btn--next {
+    justify-content: flex-start;
+    text-align: left;
+  }
+}
